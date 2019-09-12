@@ -16,9 +16,12 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+
+const greeting = document.getElementById("greeting");
+
 var app = {
     // Application Constructor
-    initialize: function() {
+    initialize: function () {
         document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);
     },
 
@@ -26,13 +29,13 @@ var app = {
     //
     // Bind any cordova events here. Common events are:
     // 'pause', 'resume', etc.
-    onDeviceReady: function() {
+    onDeviceReady: function () {
         this.receivedEvent('deviceready');
         console.log(navigator.camera);
     },
 
     // Update DOM on a Received Event
-    receivedEvent: function(id) {
+    receivedEvent: function (id) {
         var parentElement = document.getElementById(id);
         var listeningElement = parentElement.querySelector('.listening');
         var receivedElement = parentElement.querySelector('.received');
@@ -45,3 +48,12 @@ var app = {
 };
 
 app.initialize();
+
+function turnTitleRed(greeting) {
+    const greetingSegment = document.getElementsByClassName("greeting");
+    greeting.addEventListener('click', function (greetingSegment) {
+        greetingSegment.classList.add('greeting2');
+    })
+}
+
+turnTitleRed();

@@ -109,3 +109,7 @@ h1 {
 .greeting {
     font-size: 2rem;
 }
+
+.greeting2 {
+    color: red;
+}
